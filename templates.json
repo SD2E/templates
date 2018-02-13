@@ -27,7 +27,8 @@
       {
         "name": "ELASTIC_VERSION",
         "label": "Elasticsearch version",
-        "description": "Semantic version of Elasticsearch"
+        "description": "Semantic version of Elasticsearch",
+        "set": "6.2.1"
       }
     ],
     "ports": [
