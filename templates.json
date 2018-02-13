@@ -1,5 +1,4 @@
-[
-  {
+[{
     "type": "container",
     "title": "Apache Spark",
     "description": "Apache Spark with Hadoop distibution",
@@ -20,8 +19,7 @@
     "platform": "linux",
     "logo": "https://cloudinovasi.id/assets/img/logos/elasticsearch.png",
     "image": "elasticsearch-platinum:6.2.1",
-    "env": [
-      {
+    "env": [{
         "name": "ELASTIC_PASSWORD",
         "label": "Elasticsearch root password",
         "description": "Password used by the Elasticsearch root user."
@@ -50,8 +48,7 @@
       "url": "https://github.com/SD2E/templates",
       "stackfile": "stacks/elkstack/docker-compose.yml"
     },
-    "env": [
-      {
+    "env": [{
         "name": "ELASTIC_PASSWORD",
         "label": "Elasticsearch root password",
         "description": "Password used by the Elasticsearch root user."
@@ -80,12 +77,10 @@
     "platform": "linux",
     "logo": "https://cloudinovasi.id/assets/img/logos/mariadb.png",
     "image": "mariadb:latest",
-    "env": [
-      {
-        "name": "MYSQL_ROOT_PASSWORD",
-        "label": "Root password"
-      }
-    ],
+    "env": [{
+      "name": "MYSQL_ROOT_PASSWORD",
+      "label": "Root password"
+    }],
     "ports": [
       "3306/tcp"
     ],
@@ -99,8 +94,7 @@
     "platform": "linux",
     "logo": "https://cloudinovasi.id/assets/img/logos/postgres.png",
     "image": "postgres:latest",
-    "env": [
-      {
+    "env": [{
         "name": "POSTGRES_USER",
         "label": "Superuser"
       },
@@ -113,7 +107,7 @@
       "5432/tcp"
     ],
     "volumes": ["/var/lib/postgresql/data"]
-  },{
+  }, {
     "type": "container",
     "title": "Redis",
     "description": "Open-source in-memory data structure store",
