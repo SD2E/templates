@@ -44,12 +44,6 @@
       },
       {
         "name": "network.host",
-        "set": "0.0.0.0",
-        "label": "Non-loopback host",
-        "description": ""
-      },
-      {
-        "name": "network.publish_host",
         "label": "Publc IP / FQDN",
         "description": "Routable IP address or FQDN of ElasticSearch service"
       }
