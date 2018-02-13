@@ -43,14 +43,33 @@
         "description": ""
       },
       {
-        "name": "network.host",
-        "label": "Publc IP / FQDN",
-        "description": "Routable IP address or FQDN of ElasticSearch service"
+        "name": "http.host",
+        "set": "0.0.0.0",
+        "label": "Address for HTTP API to listen on",
+        "description": ""
+      },
+      {
+        "name": "transport.host",
+        "set": "127.0.0.1",
+        "label": "Internal listening host",
+        "description": ""
+      },
+      {
+        "name": "http.cors.enabled",
+        "set": true,
+        "label": "Enable CORS",
+        "description": "Enable CORS to let other HTTP clients use the API"
+      },
+      {
+        "name": "http.cors.allow-origin",
+        "set": "*",
+        "label": "Valid CORS Origins",
+        "description": "* is way too permissive but OK for development"
       }
     ],
     "ports": [
-      "9200/tcp",
-      "9300/tcp"
+      "9200:9200",
+      "9300:9300"
     ],
     "volumes": ["/usr/share/elasticsearch/data"]
   },
