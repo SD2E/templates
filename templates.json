@@ -71,26 +71,7 @@
       "9200/tcp",
       "9300/tcp"
     ]
-  },{
-    "type": "stack",
-    "title": "Wordpress",
-    "description": "Wordpress setup with a MySQL database",
-    "note": "Deploys a Wordpress instance connected to a MySQL database.",
-    "categories": ["CMS"],
-    "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/wordpress.png",
-    "repository": {
-      "url": "https://github.com/portainer/templates",
-      "stackfile": "stacks/wordpress/docker-stack.yml"
-    },
-    "env": [
-      {
-        "name": "MYSQL_ROOT_PASSWORD",
-        "label": "Database root password",
-        "description": "Password used by the MySQL root user."
-      }
-    ]
-  }
+  },
   {
     "type": "container",
     "title": "MariaDB",
@@ -132,22 +113,7 @@
       "5432/tcp"
     ],
     "volumes": ["/var/lib/postgresql/data"]
-  },
-  {
-    "type": "container",
-    "title": "Elasticsearch",
-    "description": "Open-source search and analytics engine",
-    "categories": ["database"],
-    "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/elasticsearch.png",
-    "image": "elasticsearch:latest",
-    "ports": [
-      "9200/tcp",
-      "9300/tcp"
-    ],
-    "volumes": ["/usr/share/elasticsearch/data"]
-  },
-  {
+  },{
     "type": "container",
     "title": "Redis",
     "description": "Open-source in-memory data structure store",
