@@ -13,31 +13,38 @@
     "volumes": []
   },
   {
-    "type": "container",
-    "title": "Registry",
-    "description": "Docker image registry",
-    "categories": ["docker"],
+    "type": "stack",
+    "title": "ELK",
+    "description": "Elasticsearch, Logstash, and Kibana",
+    "note": "",
+    "categories": ["database", "visualization"],
     "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/registry.png",
-    "image": "registry:latest",
-    "ports": [
-      "5000/tcp"
+    "logo": "https://raw.githubusercontent.com/blacktop/docker-elastic-stack/master/docs/img/el_stack_logo.png",
+    "repository": {
+      "url": "https://github.com/SD2E/templates",
+      "stackfile": "stacks/elkstack/docker-compose.yml"
+    },
+    "env": [
+      {
+        "name": "ELASTIC_PASSWORD",
+        "label": "Elasticsearch root password",
+        "description": "Password used by the Elasticsearch root user."
+      },
+      {
+        "name": "TAG",
+        "label": "Version of images to run",
+        "description": ""
+      },
+      {
+        "name": "ELASTIC_VERSION",
+        "label": "Semantic version of Elasticsearch",
+        "description": ""
+      }
     ],
-    "volumes": ["/var/lib/registry"]
-  },
-  {
-    "type": "container",
-    "title": "Nginx",
-    "description": "High performance web server",
-    "categories": ["webserver"],
-    "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/nginx.png",
-    "image": "nginx:latest",
     "ports": [
-      "80/tcp",
-      "443/tcp"
-    ],
-    "volumes": ["/etc/nginx", "/usr/share/nginx/html"]
+      "9200/tcp",
+      "9300/tcp"
+    ]
   },
   {
     "type": "container",
@@ -83,19 +90,6 @@
   },
   {
     "type": "container",
-    "title": "Mongo",
-    "description": "Open-source document-oriented database",
-    "categories": ["database"],
-    "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/mongo.png",
-    "image": "mongo:latest",
-    "ports": [
-      "27017/tcp"
-    ],
-    "volumes": ["/data/db"]
-  },
-  {
-    "type": "container",
     "title": "Elasticsearch",
     "description": "Open-source search and analytics engine",
     "categories": ["database"],
@@ -107,42 +101,6 @@
       "9300/tcp"
     ],
     "volumes": ["/usr/share/elasticsearch/data"]
-  },
-  {
-    "type": "container",
-    "title": "SQL Server",
-    "description": "Microsoft SQL Server on Linux",
-    "categories": ["database"],
-    "platform": "linux",
-    "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
-    "logo": "https://cloudinovasi.id/assets/img/logos/microsoft.png",
-    "image": "microsoft/mssql-server-linux:2017-GA",
-    "ports": [
-      "1433/tcp"
-    ],
-    "env": [
-      {
-        "name": "ACCEPT_EULA",
-        "set": "Y"
-      },
-      {
-        "name": "SA_PASSWORD",
-        "label": "SA password"
-      }
-    ]
-  }
-  {
-    "type": "container",
-    "title": "Solr",
-    "description": "Open-source enterprise search platform",
-    "categories": ["search-engine"],
-    "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/solr.png",
-    "image": "solr:latest",
-    "ports": [
-      "8983/tcp"
-    ],
-    "volumes": ["/opt/solr/mydata"]
   },
   {
     "type": "container",
@@ -170,25 +128,5 @@
       "5672/tcp"
     ],
     "volumes": ["/var/lib/rabbitmq"]
-  },
-  {
-    "type": "container",
-    "title": "Jenkins",
-    "description": "Open-source continuous integration tool",
-    "categories": ["continuous-integration"],
-    "platform": "linux",
-    "logo": "https://cloudinovasi.id/assets/img/logos/jenkins.png",
-    "image": "jenkins/jenkins:lts",
-    "ports": [
-      "8080/tcp",
-      "50000/tcp"
-    ],
-    "env": [
-      {
-        "name": "JENKINS_OPTS",
-        "label": "Jenkins options"
-      }
-    ],
-    "volumes": ["/var/jenkins_home"]
   }
 ]
