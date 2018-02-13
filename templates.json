@@ -29,6 +29,24 @@
         "label": "Elasticsearch version",
         "description": "Semantic version of Elasticsearch",
         "set": "6.2.1"
+      },
+      {
+        "name": "discovery.type",
+        "label": "Discovery type",
+        "description": "Set to single-node for development and testing",
+        "set": "single-node"
+      },
+      {
+        "name": "bootstrap.memory_lock",
+        "set": true,
+        "label": "Bootstrap memory_lock setting",
+        "description": ""
+      },
+      {
+        "name": "ES_JAVA_OPTS",
+        "set": "-Xms512m -Xmx512m",
+        "label": "Elasticsearch Java options",
+        "description": ""
       }
     ],
     "ports": [
