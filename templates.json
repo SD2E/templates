@@ -68,8 +68,8 @@
       }
     ],
     "ports": [
-      "9200:9200",
-      "9300:9300"
+      "9200/tcp",
+      "9300/tcp"
     ],
     "volumes": ["/usr/share/elasticsearch/data"]
   },
