@@ -18,7 +18,7 @@
     "categories": ["database"],
     "platform": "linux",
     "logo": "https://cloudinovasi.id/assets/img/logos/elasticsearch.png",
-    "image": "elasticsearch-platinum:6.2.1",
+    "image": "docker.elastic.co/elasticsearch/elasticsearch-platinum:6.2.1",
     "env": [{
         "name": "ELASTIC_PASSWORD",
         "label": "Elasticsearch root password",
